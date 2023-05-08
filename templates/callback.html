@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BC Test App</title>
+    <style>
+        body {
+            min-height: 100vh;
+            min-width: 100vw;
+            background-color: #beffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btn {
+            border-radius: 8px;
+            padding: 0.5rem;
+            outline: none;
+            border: 1px solid red;
+            font-weight: bold;
+            cursor: pointer;
+            background: bisque;
+        }
+
+        .token {
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <p class="token">Access Token: "{{.AccessToken}}"</p>
+    <p class="token">Expires In: "{{.ExpiresIn}}"</p>
+    <p class="token">Refresh token: "{{.RefreshToken}}"</p>
+    <p class="token">Refresh TOken Expires In: "{{.RefreshTokenExpiresIn}}"</p>
+    <p class="token">Token type: "{{.TokenType}}"</p>
+    <p>You can use this token to perform BC operations. See what operations you're allowed to, create commits et al.</p>
+    <button class="btn" onclick="window.close()">Close page!</button>
+</body>
+</html>

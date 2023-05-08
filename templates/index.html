@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BC Test App</title>
+    <style>
+        body {
+            min-height: 100vh;
+            min-width: 100vw;
+            background-color: #beffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btn {
+            border-radius: 8px;
+            padding: 1rem;
+            outline: none;
+            border: 1px solid red;
+            font-weight: bold;
+            cursor: pointer;
+            background: bisque;
+        }
+    </style>
+</head>
+<body>
+    <!-- https://docs.github.com/en/apps/creating-github-apps/guides/building-a-login-with-github-button-with-a-github-app -->
+    <a href="https://github.com/login/oauth/authorize?client_id={{.ClientID}}" class="btn">Sign in via Github App</button>
+</body>
+</html>

@@ -17,3 +17,5 @@ You can use the command below to run the app:
 ```sh
 go run .
 ```
+
+You can access the URL via `localhost:4000`.
