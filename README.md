@@ -19,3 +19,5 @@ go run .
 ```
 
 You can access the URL via `localhost:4000`.
+
+It's better to access it via a ngrok tunnel to avoid running into CORS issues. 
