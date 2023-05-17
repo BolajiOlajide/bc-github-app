@@ -28,16 +28,17 @@
 
         .token {
             font-weight: bold;
-            font-size: 1.5rem;
+            font-size: 1rem;
         }
     </style>
 </head>
 <body>
-    <!-- <p class="token">Access Token: "{{.AccessToken}}"</p>
-    <p class="token">Expires In: "{{.ExpiresIn}}"</p>
+    <p class="token">Access Token: "{{.AccessToken}}"</p>
+    <p class="token">Expires in: "{{.ExpiresIn}}"</p>
     <p class="token">Refresh token: "{{.RefreshToken}}"</p>
-    <p class="token">Refresh TOken Expires In: "{{.RefreshTokenExpiresIn}}"</p>
-    <p class="token">Token type: "{{.TokenType}}"</p> -->
+    <p class="token">Refresh token expires in: "{{.RefreshTokenExpiresIn}}"</p>
+    <p class="token">Token type: "{{.TokenType}}"</p>
+    <hr />
     <div>
         <p>You can use this token to perform BC operations. See what operations you're allowed to, create commits et al.</p>
         <input type="text" placeholder="repository" />
