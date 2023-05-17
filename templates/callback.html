@@ -33,12 +33,36 @@
     </style>
 </head>
 <body>
-    <p class="token">Access Token: "{{.AccessToken}}"</p>
+    <!-- <p class="token">Access Token: "{{.AccessToken}}"</p>
     <p class="token">Expires In: "{{.ExpiresIn}}"</p>
     <p class="token">Refresh token: "{{.RefreshToken}}"</p>
     <p class="token">Refresh TOken Expires In: "{{.RefreshTokenExpiresIn}}"</p>
-    <p class="token">Token type: "{{.TokenType}}"</p>
-    <p>You can use this token to perform BC operations. See what operations you're allowed to, create commits et al.</p>
-    <button class="btn" onclick="window.close()">Close page!</button>
+    <p class="token">Token type: "{{.TokenType}}"</p> -->
+    <div>
+        <p>You can use this token to perform BC operations. See what operations you're allowed to, create commits et al.</p>
+        <input type="text" placeholder="repository" />
+        <br />
+        <input type="text" placeholder="branch name" />
+        <br />
+        <input type="text" placeholder="owner" />
+        <br />
+        <button class="btn" onclick="createCommit()">Create commit</button>
+    </div>
+
+    <script>
+        function createCommit() {
+            fetch('https://e87b-41-184-170-180.ngrok-free.app/create-commit', {
+                method: 'POST',
+                body: JSON.stringify({
+                    'branch': 'bolaji-test',
+                    'repo': '2023-ams-timer-kat',
+                    'owner': 'BolajiOlajide'
+                }),
+                headers: {
+                    'gh-token': "{{.AccessToken}}"
+                }
+            })
+        }
+    </script>
 </body>
 </html>
