@@ -41,23 +41,39 @@
     <hr />
     <div>
         <p>You can use this token to perform BC operations. See what operations you're allowed to, create commits et al.</p>
-        <input type="text" placeholder="repository" />
+        <input type="text" placeholder="repository" id="repo" />
         <br />
-        <input type="text" placeholder="branch name" />
+        <input type="text" placeholder="branch name" id="branch" />
         <br />
-        <input type="text" placeholder="owner" />
+        <input type="text" placeholder="owner" id="owner" />
         <br />
         <button class="btn" onclick="createCommit()">Create commit</button>
     </div>
 
     <script>
         function createCommit() {
+            let repo = document.querySelector('#repo');
+            let branch = document.querySelector('#branch');
+            let owner = document.querySelector('#owner');
+
+            if (repo === '') {
+                repo = '2023-ams-timer-kat'
+            }
+
+            if (branch === '') {
+                branch = 'bolaji-test'
+            }
+
+            if (owner === '') {
+                owner = 'Bolaji'
+            }
+
             fetch('https://e87b-41-184-170-180.ngrok-free.app/create-commit', {
                 method: 'POST',
                 body: JSON.stringify({
-                    'branch': 'bolaji-test',
-                    'repo': '2023-ams-timer-kat',
-                    'owner': 'BolajiOlajide'
+                    'branch': branch,
+                    'repo': reoo,
+                    'owner': owner
                 }),
                 headers: {
                     'gh-token': "{{.AccessToken}}"
